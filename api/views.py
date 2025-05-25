@@ -134,6 +134,9 @@ class EmployeeDetail(generics.RetrieveUpdateDestroyAPIView):
     
 """
 
+
+"""
+
 # viewsets.ViewSet
 class EmployeeViewSet(viewsets.ViewSet):
     def list(self, request):
@@ -165,3 +168,12 @@ class EmployeeViewSet(viewsets.ViewSet):
         employee = get_object_or_404(Employee,pk = pk)
         employee.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+        
+"""
+
+
+# viewsets.ModelViewSet
+
+class EmployeeViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
