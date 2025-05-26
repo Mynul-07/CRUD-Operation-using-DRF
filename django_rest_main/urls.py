@@ -22,5 +22,5 @@ urlpatterns = [
     # web application
     path('students/', include('students.urls')),
     # API
-    path('api/v1/', include('api.urls')),
+    path('api/v1/', include('api.urls')), # connected to api/urls.py
 ]
